@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -725,17 +725,6 @@
                                     <action selector="loadVFFFilePathAction:" target="XfG-lQ-9wD" id="KvZ-vO-jiW"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aan-SL-pwM">
-                                <rect key="frame" x="20" y="49" width="413" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="8vL-aU-Wtr"/>
-                                </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="XZG-kt-y1m">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-9H-UKw">
                                 <rect key="frame" x="347" y="13" width="96" height="32"/>
                                 <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hd4-0p-mXv">
@@ -770,6 +759,34 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
+                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npm-qJ-wm8">
+                                <rect key="frame" x="20" y="61" width="413" height="96"/>
+                                <clipView key="contentView" ambiguous="YES" id="Kga-zM-Tem">
+                                    <rect key="frame" x="1" y="1" width="411" height="94"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Mqc-7G-v0W">
+                                            <rect key="frame" x="0.0" y="0.0" width="411" height="94"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="411" height="94"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="411" height="94"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="iQV-81-kpF">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="QwK-tP-DI3">
+                                    <rect key="frame" x="396" y="1" width="16" height="94"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="NA5-FC-Jy9" firstAttribute="leading" secondItem="Ymn-qW-nM8" secondAttribute="leading" id="1Zd-6W-VJj"/>
@@ -777,14 +794,12 @@
                             <constraint firstItem="NA5-FC-Jy9" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="6Ox-12-evQ"/>
                             <constraint firstItem="Ymn-qW-nM8" firstAttribute="top" secondItem="NA5-FC-Jy9" secondAttribute="bottom" constant="8" symbolic="YES" id="9g1-U2-2TV"/>
                             <constraint firstItem="b39-3w-qjf" firstAttribute="top" secondItem="Ymn-qW-nM8" secondAttribute="bottom" constant="8" symbolic="YES" id="Cr5-SD-SUd"/>
-                            <constraint firstItem="aan-SL-pwM" firstAttribute="trailing" secondItem="b6h-cd-xvC" secondAttribute="trailing" id="F5J-1e-6RS"/>
                             <constraint firstItem="Ymn-qW-nM8" firstAttribute="leading" secondItem="b39-3w-qjf" secondAttribute="leading" id="FR5-SN-VGa"/>
                             <constraint firstItem="mDh-Eo-scQ" firstAttribute="baseline" secondItem="AN6-cc-Zvi" secondAttribute="baseline" id="FhF-v6-8p1"/>
                             <constraint firstAttribute="bottom" secondItem="BuE-sb-o4G" secondAttribute="bottom" constant="20" symbolic="YES" id="HdH-XG-uzk"/>
                             <constraint firstAttribute="trailing" secondItem="Deu-9H-UKw" secondAttribute="trailing" constant="58" id="Ibr-mg-usV"/>
                             <constraint firstItem="b6h-cd-xvC" firstAttribute="leading" secondItem="mDh-Eo-scQ" secondAttribute="leading" id="Kd8-sX-kWz"/>
                             <constraint firstItem="b39-3w-qjf" firstAttribute="leading" secondItem="mDh-Eo-scQ" secondAttribute="leading" id="Nr8-sF-Zvb"/>
-                            <constraint firstItem="aan-SL-pwM" firstAttribute="top" secondItem="b6h-cd-xvC" secondAttribute="bottom" constant="9" id="Ofd-tW-6o6"/>
                             <constraint firstItem="LsR-Yg-J7a" firstAttribute="leading" secondItem="Ymn-qW-nM8" secondAttribute="trailing" constant="2" id="Pcd-SG-i5i"/>
                             <constraint firstAttribute="trailing" secondItem="LsR-Yg-J7a" secondAttribute="trailing" constant="20" symbolic="YES" id="SIH-Bx-Lq7"/>
                             <constraint firstItem="Deu-9H-UKw" firstAttribute="leading" secondItem="BuE-sb-o4G" secondAttribute="trailing" constant="2" id="Wuw-84-Hdt"/>
@@ -793,9 +808,7 @@
                             <constraint firstItem="LsR-Yg-J7a" firstAttribute="leading" secondItem="AN6-cc-Zvi" secondAttribute="leading" id="q4Y-f4-c6D"/>
                             <constraint firstItem="b6h-cd-xvC" firstAttribute="top" secondItem="mDh-Eo-scQ" secondAttribute="bottom" constant="8" id="tPf-gV-p6a"/>
                             <constraint firstItem="BuE-sb-o4G" firstAttribute="baseline" secondItem="Deu-9H-UKw" secondAttribute="baseline" id="uXJ-2u-Nv7"/>
-                            <constraint firstItem="b6h-cd-xvC" firstAttribute="leading" secondItem="aan-SL-pwM" secondAttribute="leading" id="vkn-Xr-pkZ"/>
                             <constraint firstItem="AN6-cc-Zvi" firstAttribute="trailing" secondItem="LsR-Yg-J7a" secondAttribute="trailing" id="x6L-oG-4Bh"/>
-                            <constraint firstItem="BuE-sb-o4G" firstAttribute="top" secondItem="aan-SL-pwM" secondAttribute="bottom" constant="8" symbolic="YES" id="x6W-Uc-RSl"/>
                             <constraint firstItem="NA5-FC-Jy9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="xYi-8q-2jv"/>
                             <constraint firstItem="b6h-cd-xvC" firstAttribute="trailing" secondItem="mDh-Eo-scQ" secondAttribute="trailing" id="z0I-lg-MIm"/>
                             <constraint firstAttribute="trailing" secondItem="b6h-cd-xvC" secondAttribute="trailing" constant="62" id="z76-Y2-Pkp"/>
@@ -804,7 +817,7 @@
                     <connections>
                         <outlet property="myClearButton" destination="BuE-sb-o4G" id="RWQ-Wu-kyd"/>
                         <outlet property="myGenerateButton" destination="Deu-9H-UKw" id="i1y-AN-U9r"/>
-                        <outlet property="myGenerateConsoleTextField" destination="aan-SL-pwM" id="DWb-Sl-DrG"/>
+                        <outlet property="myGenerateConsoleTextField" destination="Mqc-7G-v0W" id="fcR-3G-jTy"/>
                         <outlet property="myModelTypePopupButton" destination="b6h-cd-xvC" id="ZKg-4j-4Sa"/>
                         <outlet property="myPopulateSBMLPathButton" destination="LsR-Yg-J7a" id="mR3-BD-nGT"/>
                         <outlet property="myPopulateVFFPathButton" destination="AN6-cc-Zvi" id="g5h-5V-bl9"/>

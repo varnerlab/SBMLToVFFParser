@@ -16,6 +16,10 @@
 		ADA048311C220A59002CAB5A /* VLSBMLConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA048301C220A59002CAB5A /* VLSBMLConverterViewController.swift */; };
 		ADA048351C2241BC002CAB5A /* SBMLToLFBAFlatFileConversionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA048341C2241BC002CAB5A /* SBMLToLFBAFlatFileConversionDelegate.swift */; };
 		ADA048381C2242D7002CAB5A /* ConversionDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA048371C2242D7002CAB5A /* ConversionDelegateProtocol.swift */; };
+		ADA4D1B21C85402400FDB8DA /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA4D1B11C85402400FDB8DA /* Mediator.swift */; };
+		ADA4D1B41C85404C00FDB8DA /* MessageMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA4D1B31C85404C00FDB8DA /* MessageMediator.swift */; };
+		ADA4D1B61C85441800FDB8DA /* MediatorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA4D1B51C85441800FDB8DA /* MediatorClient.swift */; };
+		ADA4D1B81C8546D400FDB8DA /* VLSBMLViewControllerMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA4D1B71C8546D400FDB8DA /* VLSBMLViewControllerMediatorDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		ADA048301C220A59002CAB5A /* VLSBMLConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLSBMLConverterViewController.swift; sourceTree = "<group>"; };
 		ADA048341C2241BC002CAB5A /* SBMLToLFBAFlatFileConversionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBMLToLFBAFlatFileConversionDelegate.swift; sourceTree = "<group>"; };
 		ADA048371C2242D7002CAB5A /* ConversionDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionDelegateProtocol.swift; sourceTree = "<group>"; };
+		ADA4D1B11C85402400FDB8DA /* Mediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
+		ADA4D1B31C85404C00FDB8DA /* MessageMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageMediator.swift; sourceTree = "<group>"; };
+		ADA4D1B51C85441800FDB8DA /* MediatorClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediatorClient.swift; sourceTree = "<group>"; };
+		ADA4D1B71C8546D400FDB8DA /* VLSBMLViewControllerMediatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLSBMLViewControllerMediatorDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,7 @@
 		ADA048041C220650002CAB5A /* SBMLToVFFConverter */ = {
 			isa = PBXGroup;
 			children = (
+				ADA4D1B01C853FA800FDB8DA /* mediator */,
 				ADA048361C2241EE002CAB5A /* delegate */,
 				ADA048051C220650002CAB5A /* AppDelegate.swift */,
 				ADA048071C220650002CAB5A /* ViewController.swift */,
@@ -135,8 +144,19 @@
 			children = (
 				ADA048341C2241BC002CAB5A /* SBMLToLFBAFlatFileConversionDelegate.swift */,
 				ADA048371C2242D7002CAB5A /* ConversionDelegateProtocol.swift */,
+				ADA4D1B71C8546D400FDB8DA /* VLSBMLViewControllerMediatorDelegate.swift */,
 			);
 			name = delegate;
+			sourceTree = "<group>";
+		};
+		ADA4D1B01C853FA800FDB8DA /* mediator */ = {
+			isa = PBXGroup;
+			children = (
+				ADA4D1B11C85402400FDB8DA /* Mediator.swift */,
+				ADA4D1B31C85404C00FDB8DA /* MessageMediator.swift */,
+				ADA4D1B51C85441800FDB8DA /* MediatorClient.swift */,
+			);
+			name = mediator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +292,10 @@
 			files = (
 				ADA048081C220650002CAB5A /* ViewController.swift in Sources */,
 				ADA048311C220A59002CAB5A /* VLSBMLConverterViewController.swift in Sources */,
+				ADA4D1B41C85404C00FDB8DA /* MessageMediator.swift in Sources */,
+				ADA4D1B81C8546D400FDB8DA /* VLSBMLViewControllerMediatorDelegate.swift in Sources */,
+				ADA4D1B61C85441800FDB8DA /* MediatorClient.swift in Sources */,
+				ADA4D1B21C85402400FDB8DA /* Mediator.swift in Sources */,
 				ADA048061C220650002CAB5A /* AppDelegate.swift in Sources */,
 				ADA048351C2241BC002CAB5A /* SBMLToLFBAFlatFileConversionDelegate.swift in Sources */,
 				ADA048381C2242D7002CAB5A /* ConversionDelegateProtocol.swift in Sources */,

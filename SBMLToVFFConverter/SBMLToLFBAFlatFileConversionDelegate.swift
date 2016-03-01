@@ -10,6 +10,8 @@ import Cocoa
 
 class SBMLToLFBAFlatFileConversionDelegate: NSObject, ConversionDelegateProtocol {
 
+    // instance variables -
+    let message_mediator:MessageMediator = MessageMediator.sharedInstance
     
     // delegate methods -
     func execute(input:NSURL, output:NSURL) -> Void {
@@ -85,6 +87,9 @@ class SBMLToLFBAFlatFileConversionDelegate: NSObject, ConversionDelegateProtocol
                 
                 // end and newline -
                 buffer+=";\n"
+                
+                // message -
+                message_mediator.send(reaction_name, client: nil)
             }
         }
         catch {

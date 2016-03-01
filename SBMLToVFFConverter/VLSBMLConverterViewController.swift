@@ -19,21 +19,36 @@ class VLSBMLConverterViewController: NSViewController {
     @IBOutlet var myPopulateVFFPathButton:NSButton?
     @IBOutlet var mySBMLFilePathTextField:NSTextField?
     @IBOutlet var myVFFFilePathTextField:NSTextField?
-    @IBOutlet var myGenerateConsoleTextField:NSTextField?
+    @IBOutlet var myGenerateConsoleTextField:NSTextView?
     @IBOutlet var myModelTypePopupButton:NSPopUpButton?
+    
     
     // data -
     var sbml_file_path:NSURL?
     var vff_file_path:NSURL?
+    var mediator_delegate:VLSBMLViewControllerMediatorDelegate?
     
     // delegates -
     var delegate:ConversionDelegateProtocol = SBMLToLFBAFlatFileConversionDelegate()
     
+    // build mediator -
+    let message_mediator:MessageMediator = MessageMediator.sharedInstance;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        if let local_text_field = myGenerateConsoleTextField {
+            
+            // build the mediator delegate -
+            mediator_delegate = VLSBMLViewControllerMediatorDelegate(textField:local_text_field)
+            
+            if let local_mediator = mediator_delegate {
+                
+                // add the client -
+                message_mediator.addColleague(local_mediator)
+            }
+        }
     }
-    
     
     
     // MARK:- IBAction methods -
@@ -127,7 +142,7 @@ class VLSBMLConverterViewController: NSViewController {
         // clear out the data -
         self.mySBMLFilePathTextField?.stringValue = ""
         self.myVFFFilePathTextField?.stringValue = ""
-        self.myGenerateConsoleTextField?.stringValue = ""
+        self.myGenerateConsoleTextField?.string = ""
         
         // remove url's -
         self.sbml_file_path = nil
