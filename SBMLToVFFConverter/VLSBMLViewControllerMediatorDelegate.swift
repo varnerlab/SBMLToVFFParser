@@ -22,7 +22,6 @@ class VLSBMLViewControllerMediatorDelegate:MediatorClient {
         
         // buffer -
         var buffer = ""
-        
         // get the old string -
         let old_text = text_field.string!
         
@@ -35,6 +34,6 @@ class VLSBMLViewControllerMediatorDelegate:MediatorClient {
         text_field.string = buffer
         
         // scroll -
-        //text_field.scrollToEndOfDocument(nil)
+        text_field.setNeedsDisplayInRect(text_field.bounds)
     }
 }

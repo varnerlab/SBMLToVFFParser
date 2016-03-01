@@ -759,7 +759,7 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
-                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npm-qJ-wm8">
+                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="Npm-qJ-wm8">
                                 <rect key="frame" x="20" y="61" width="413" height="96"/>
                                 <clipView key="contentView" ambiguous="YES" id="Kga-zM-Tem">
                                     <rect key="frame" x="1" y="1" width="411" height="94"/>
