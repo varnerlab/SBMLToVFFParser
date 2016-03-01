@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,12 +642,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SBMLToVFFConverter" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -662,20 +663,158 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="298" y="244"/>
         </scene>
-        <!--View Controller-->
+        <!--Converter View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="VLSBMLConverterViewController" customModule="SBMLToVFFConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="495" height="319"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ymn-qW-nM8">
+                                <rect key="frame" x="20" y="252" width="413" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="QNl-El-vhp">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mDh-Eo-scQ">
+                                <rect key="frame" x="20" y="197" width="413" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="LQU-2Z-QVb">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NA5-FC-Jy9">
+                                <rect key="frame" x="18" y="282" width="112" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Path to SBML file:" id="NLB-I4-QgV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b39-3w-qjf">
+                                <rect key="frame" x="18" y="227" width="100" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Path to VFF file:" id="2QF-L4-fgl">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LsR-Yg-J7a">
+                                <rect key="frame" x="435" y="250" width="40" height="25"/>
+                                <buttonCell key="cell" type="roundTextured" title="..." bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sxy-5r-gHT">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="loadSBMLFilePathAction:" target="XfG-lQ-9wD" id="gha-Bm-NsH"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AN6-cc-Zvi">
+                                <rect key="frame" x="435" y="195" width="40" height="25"/>
+                                <buttonCell key="cell" type="roundTextured" title="..." bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7Zc-jg-1hn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="loadVFFFilePathAction:" target="XfG-lQ-9wD" id="KvZ-vO-jiW"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aan-SL-pwM">
+                                <rect key="frame" x="20" y="49" width="413" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="8vL-aU-Wtr"/>
+                                </constraints>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="XZG-kt-y1m">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-9H-UKw">
+                                <rect key="frame" x="347" y="13" width="96" height="32"/>
+                                <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hd4-0p-mXv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="generateVFFFileFromSBMLFileAction:" target="XfG-lQ-9wD" id="vNJ-eo-emz"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BuE-sb-o4G">
+                                <rect key="frame" x="285" y="13" width="72" height="32"/>
+                                <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kIQ-m9-GDk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clearDataFromAllFieldsAction:" target="XfG-lQ-9wD" id="Eux-AJ-QqA"/>
+                                </connections>
+                            </button>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b6h-cd-xvC">
+                                <rect key="frame" x="18" y="165" width="418" height="26"/>
+                                <popUpButtonCell key="cell" type="push" alternateTitle="VFF model type ..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="5cK-wz-QXf">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="tUb-pW-RlM">
+                                        <items>
+                                            <menuItem title="Select model type ..." id="WRg-FV-yMD"/>
+                                            <menuItem title="Item 2" id="Wz5-Fc-1c1"/>
+                                            <menuItem title="Item 3" id="Hek-oi-zGw"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="NA5-FC-Jy9" firstAttribute="leading" secondItem="Ymn-qW-nM8" secondAttribute="leading" id="1Zd-6W-VJj"/>
+                            <constraint firstItem="Ymn-qW-nM8" firstAttribute="baseline" secondItem="LsR-Yg-J7a" secondAttribute="baseline" id="2nf-w1-JqC"/>
+                            <constraint firstItem="NA5-FC-Jy9" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="6Ox-12-evQ"/>
+                            <constraint firstItem="Ymn-qW-nM8" firstAttribute="top" secondItem="NA5-FC-Jy9" secondAttribute="bottom" constant="8" symbolic="YES" id="9g1-U2-2TV"/>
+                            <constraint firstItem="b39-3w-qjf" firstAttribute="top" secondItem="Ymn-qW-nM8" secondAttribute="bottom" constant="8" symbolic="YES" id="Cr5-SD-SUd"/>
+                            <constraint firstItem="aan-SL-pwM" firstAttribute="trailing" secondItem="b6h-cd-xvC" secondAttribute="trailing" id="F5J-1e-6RS"/>
+                            <constraint firstItem="Ymn-qW-nM8" firstAttribute="leading" secondItem="b39-3w-qjf" secondAttribute="leading" id="FR5-SN-VGa"/>
+                            <constraint firstItem="mDh-Eo-scQ" firstAttribute="baseline" secondItem="AN6-cc-Zvi" secondAttribute="baseline" id="FhF-v6-8p1"/>
+                            <constraint firstAttribute="bottom" secondItem="BuE-sb-o4G" secondAttribute="bottom" constant="20" symbolic="YES" id="HdH-XG-uzk"/>
+                            <constraint firstAttribute="trailing" secondItem="Deu-9H-UKw" secondAttribute="trailing" constant="58" id="Ibr-mg-usV"/>
+                            <constraint firstItem="b6h-cd-xvC" firstAttribute="leading" secondItem="mDh-Eo-scQ" secondAttribute="leading" id="Kd8-sX-kWz"/>
+                            <constraint firstItem="b39-3w-qjf" firstAttribute="leading" secondItem="mDh-Eo-scQ" secondAttribute="leading" id="Nr8-sF-Zvb"/>
+                            <constraint firstItem="aan-SL-pwM" firstAttribute="top" secondItem="b6h-cd-xvC" secondAttribute="bottom" constant="9" id="Ofd-tW-6o6"/>
+                            <constraint firstItem="LsR-Yg-J7a" firstAttribute="leading" secondItem="Ymn-qW-nM8" secondAttribute="trailing" constant="2" id="Pcd-SG-i5i"/>
+                            <constraint firstAttribute="trailing" secondItem="LsR-Yg-J7a" secondAttribute="trailing" constant="20" symbolic="YES" id="SIH-Bx-Lq7"/>
+                            <constraint firstItem="Deu-9H-UKw" firstAttribute="leading" secondItem="BuE-sb-o4G" secondAttribute="trailing" constant="2" id="Wuw-84-Hdt"/>
+                            <constraint firstItem="mDh-Eo-scQ" firstAttribute="top" secondItem="b39-3w-qjf" secondAttribute="bottom" constant="8" symbolic="YES" id="cwE-1D-ljC"/>
+                            <constraint firstItem="mDh-Eo-scQ" firstAttribute="trailing" secondItem="Ymn-qW-nM8" secondAttribute="trailing" id="f79-2s-UW0"/>
+                            <constraint firstItem="LsR-Yg-J7a" firstAttribute="leading" secondItem="AN6-cc-Zvi" secondAttribute="leading" id="q4Y-f4-c6D"/>
+                            <constraint firstItem="b6h-cd-xvC" firstAttribute="top" secondItem="mDh-Eo-scQ" secondAttribute="bottom" constant="8" id="tPf-gV-p6a"/>
+                            <constraint firstItem="BuE-sb-o4G" firstAttribute="baseline" secondItem="Deu-9H-UKw" secondAttribute="baseline" id="uXJ-2u-Nv7"/>
+                            <constraint firstItem="b6h-cd-xvC" firstAttribute="leading" secondItem="aan-SL-pwM" secondAttribute="leading" id="vkn-Xr-pkZ"/>
+                            <constraint firstItem="AN6-cc-Zvi" firstAttribute="trailing" secondItem="LsR-Yg-J7a" secondAttribute="trailing" id="x6L-oG-4Bh"/>
+                            <constraint firstItem="BuE-sb-o4G" firstAttribute="top" secondItem="aan-SL-pwM" secondAttribute="bottom" constant="8" symbolic="YES" id="x6W-Uc-RSl"/>
+                            <constraint firstItem="NA5-FC-Jy9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="xYi-8q-2jv"/>
+                            <constraint firstItem="b6h-cd-xvC" firstAttribute="trailing" secondItem="mDh-Eo-scQ" secondAttribute="trailing" id="z0I-lg-MIm"/>
+                            <constraint firstAttribute="trailing" secondItem="b6h-cd-xvC" secondAttribute="trailing" constant="62" id="z76-Y2-Pkp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myClearButton" destination="BuE-sb-o4G" id="RWQ-Wu-kyd"/>
+                        <outlet property="myGenerateButton" destination="Deu-9H-UKw" id="i1y-AN-U9r"/>
+                        <outlet property="myGenerateConsoleTextField" destination="aan-SL-pwM" id="DWb-Sl-DrG"/>
+                        <outlet property="myModelTypePopupButton" destination="b6h-cd-xvC" id="ZKg-4j-4Sa"/>
+                        <outlet property="myPopulateSBMLPathButton" destination="LsR-Yg-J7a" id="mR3-BD-nGT"/>
+                        <outlet property="myPopulateVFFPathButton" destination="AN6-cc-Zvi" id="g5h-5V-bl9"/>
+                        <outlet property="mySBMLFilePathTextField" destination="Ymn-qW-nM8" id="TnM-Pu-7mt"/>
+                        <outlet property="myVFFFilePathTextField" destination="mDh-Eo-scQ" id="P2u-r6-wjM"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="298.5" y="690.5"/>
         </scene>
     </scenes>
 </document>

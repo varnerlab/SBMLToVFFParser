@@ -13,6 +13,9 @@
 		ADA0480D1C220650002CAB5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADA0480B1C220650002CAB5A /* Main.storyboard */; };
 		ADA048181C220651002CAB5A /* SBMLToVFFConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA048171C220651002CAB5A /* SBMLToVFFConverterTests.swift */; };
 		ADA048231C220651002CAB5A /* SBMLToVFFConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA048221C220651002CAB5A /* SBMLToVFFConverterUITests.swift */; };
+		ADA048311C220A59002CAB5A /* VLSBMLConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA048301C220A59002CAB5A /* VLSBMLConverterViewController.swift */; };
+		ADA048351C2241BC002CAB5A /* SBMLToLFBAFlatFileConversionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA048341C2241BC002CAB5A /* SBMLToLFBAFlatFileConversionDelegate.swift */; };
+		ADA048381C2242D7002CAB5A /* ConversionDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA048371C2242D7002CAB5A /* ConversionDelegateProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		ADA0481E1C220651002CAB5A /* SBMLToVFFConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SBMLToVFFConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADA048221C220651002CAB5A /* SBMLToVFFConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBMLToVFFConverterUITests.swift; sourceTree = "<group>"; };
 		ADA048241C220651002CAB5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADA048301C220A59002CAB5A /* VLSBMLConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLSBMLConverterViewController.swift; sourceTree = "<group>"; };
+		ADA048341C2241BC002CAB5A /* SBMLToLFBAFlatFileConversionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBMLToLFBAFlatFileConversionDelegate.swift; sourceTree = "<group>"; };
+		ADA048371C2242D7002CAB5A /* ConversionDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionDelegateProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +101,13 @@
 		ADA048041C220650002CAB5A /* SBMLToVFFConverter */ = {
 			isa = PBXGroup;
 			children = (
+				ADA048361C2241EE002CAB5A /* delegate */,
 				ADA048051C220650002CAB5A /* AppDelegate.swift */,
 				ADA048071C220650002CAB5A /* ViewController.swift */,
 				ADA048091C220650002CAB5A /* Assets.xcassets */,
 				ADA0480B1C220650002CAB5A /* Main.storyboard */,
 				ADA0480E1C220650002CAB5A /* Info.plist */,
+				ADA048301C220A59002CAB5A /* VLSBMLConverterViewController.swift */,
 			);
 			path = SBMLToVFFConverter;
 			sourceTree = "<group>";
@@ -120,6 +128,15 @@
 				ADA048241C220651002CAB5A /* Info.plist */,
 			);
 			path = SBMLToVFFConverterUITests;
+			sourceTree = "<group>";
+		};
+		ADA048361C2241EE002CAB5A /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				ADA048341C2241BC002CAB5A /* SBMLToLFBAFlatFileConversionDelegate.swift */,
+				ADA048371C2242D7002CAB5A /* ConversionDelegateProtocol.swift */,
+			);
+			name = delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +207,7 @@
 				TargetAttributes = {
 					ADA048011C220650002CAB5A = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 9H8NJ2NLT7;
 					};
 					ADA048121C220650002CAB5A = {
 						CreatedOnToolsVersion = 7.2;
@@ -253,7 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADA048081C220650002CAB5A /* ViewController.swift in Sources */,
+				ADA048311C220A59002CAB5A /* VLSBMLConverterViewController.swift in Sources */,
 				ADA048061C220650002CAB5A /* AppDelegate.swift in Sources */,
+				ADA048351C2241BC002CAB5A /* SBMLToLFBAFlatFileConversionDelegate.swift in Sources */,
+				ADA048381C2242D7002CAB5A /* ConversionDelegateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +496,7 @@
 				ADA048291C220651002CAB5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADA0482A1C220651002CAB5A /* Build configuration list for PBXNativeTarget "SBMLToVFFConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +505,7 @@
 				ADA0482C1C220651002CAB5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADA0482D1C220651002CAB5A /* Build configuration list for PBXNativeTarget "SBMLToVFFConverterUITests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +514,7 @@
 				ADA0482F1C220651002CAB5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
