@@ -759,13 +759,13 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
-                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="Npm-qJ-wm8">
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="Npm-qJ-wm8">
                                 <rect key="frame" x="20" y="61" width="413" height="96"/>
-                                <clipView key="contentView" ambiguous="YES" id="Kga-zM-Tem">
+                                <clipView key="contentView" id="Kga-zM-Tem">
                                     <rect key="frame" x="1" y="1" width="411" height="94"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Mqc-7G-v0W">
+                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Mqc-7G-v0W">
                                             <rect key="frame" x="0.0" y="0.0" width="411" height="94"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -794,6 +794,7 @@
                             <constraint firstItem="NA5-FC-Jy9" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="6Ox-12-evQ"/>
                             <constraint firstItem="Ymn-qW-nM8" firstAttribute="top" secondItem="NA5-FC-Jy9" secondAttribute="bottom" constant="8" symbolic="YES" id="9g1-U2-2TV"/>
                             <constraint firstItem="b39-3w-qjf" firstAttribute="top" secondItem="Ymn-qW-nM8" secondAttribute="bottom" constant="8" symbolic="YES" id="Cr5-SD-SUd"/>
+                            <constraint firstItem="BuE-sb-o4G" firstAttribute="top" secondItem="Npm-qJ-wm8" secondAttribute="bottom" constant="20" symbolic="YES" id="DIa-gc-Trg"/>
                             <constraint firstItem="Ymn-qW-nM8" firstAttribute="leading" secondItem="b39-3w-qjf" secondAttribute="leading" id="FR5-SN-VGa"/>
                             <constraint firstItem="mDh-Eo-scQ" firstAttribute="baseline" secondItem="AN6-cc-Zvi" secondAttribute="baseline" id="FhF-v6-8p1"/>
                             <constraint firstAttribute="bottom" secondItem="BuE-sb-o4G" secondAttribute="bottom" constant="20" symbolic="YES" id="HdH-XG-uzk"/>
@@ -802,13 +803,16 @@
                             <constraint firstItem="b39-3w-qjf" firstAttribute="leading" secondItem="mDh-Eo-scQ" secondAttribute="leading" id="Nr8-sF-Zvb"/>
                             <constraint firstItem="LsR-Yg-J7a" firstAttribute="leading" secondItem="Ymn-qW-nM8" secondAttribute="trailing" constant="2" id="Pcd-SG-i5i"/>
                             <constraint firstAttribute="trailing" secondItem="LsR-Yg-J7a" secondAttribute="trailing" constant="20" symbolic="YES" id="SIH-Bx-Lq7"/>
+                            <constraint firstAttribute="trailing" secondItem="Npm-qJ-wm8" secondAttribute="trailing" constant="62" id="UIF-2E-joP"/>
                             <constraint firstItem="Deu-9H-UKw" firstAttribute="leading" secondItem="BuE-sb-o4G" secondAttribute="trailing" constant="2" id="Wuw-84-Hdt"/>
                             <constraint firstItem="mDh-Eo-scQ" firstAttribute="top" secondItem="b39-3w-qjf" secondAttribute="bottom" constant="8" symbolic="YES" id="cwE-1D-ljC"/>
                             <constraint firstItem="mDh-Eo-scQ" firstAttribute="trailing" secondItem="Ymn-qW-nM8" secondAttribute="trailing" id="f79-2s-UW0"/>
                             <constraint firstItem="LsR-Yg-J7a" firstAttribute="leading" secondItem="AN6-cc-Zvi" secondAttribute="leading" id="q4Y-f4-c6D"/>
+                            <constraint firstItem="Npm-qJ-wm8" firstAttribute="top" secondItem="b6h-cd-xvC" secondAttribute="bottom" constant="11" id="r5K-LR-wKX"/>
                             <constraint firstItem="b6h-cd-xvC" firstAttribute="top" secondItem="mDh-Eo-scQ" secondAttribute="bottom" constant="8" id="tPf-gV-p6a"/>
                             <constraint firstItem="BuE-sb-o4G" firstAttribute="baseline" secondItem="Deu-9H-UKw" secondAttribute="baseline" id="uXJ-2u-Nv7"/>
                             <constraint firstItem="AN6-cc-Zvi" firstAttribute="trailing" secondItem="LsR-Yg-J7a" secondAttribute="trailing" id="x6L-oG-4Bh"/>
+                            <constraint firstItem="Npm-qJ-wm8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="xLg-Nu-sr0"/>
                             <constraint firstItem="NA5-FC-Jy9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="xYi-8q-2jv"/>
                             <constraint firstItem="b6h-cd-xvC" firstAttribute="trailing" secondItem="mDh-Eo-scQ" secondAttribute="trailing" id="z0I-lg-MIm"/>
                             <constraint firstAttribute="trailing" secondItem="b6h-cd-xvC" secondAttribute="trailing" constant="62" id="z76-Y2-Pkp"/>

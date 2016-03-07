@@ -39,6 +39,9 @@ class VLSBMLConverterViewController: NSViewController {
         
         if let local_text_field = myGenerateConsoleTextField {
             
+            // user can't edit -
+            local_text_field.editable = false
+            
             // build the mediator delegate -
             mediator_delegate = VLSBMLViewControllerMediatorDelegate(textField:local_text_field)
             
@@ -127,13 +130,18 @@ class VLSBMLConverterViewController: NSViewController {
     
     @IBAction func generateVFFFileFromSBMLFileAction(sender:NSButton) -> Void {
         
-        
         // just in case ... double check to make sure we have he URLs -
         if (self.sbml_file_path != nil && self.vff_file_path != nil){
         
+            // clearout the console -
+            mediator_delegate?.clearConsole()
+            
             // ok, when we implement more delegates, we would have some logic here 
             // to generate the proper delegate, for now just use the default -
             delegate.execute(self.sbml_file_path!, output: self.vff_file_path!)
+            
+            // KIA the delegate -
+            //delegate = nil
         }
     }
     

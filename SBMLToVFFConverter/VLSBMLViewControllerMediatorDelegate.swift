@@ -18,22 +18,35 @@ class VLSBMLViewControllerMediatorDelegate:MediatorClient {
         text_field = textField
     }
     
+    func clearConsole() -> Void {
+        text_field.string = ""
+    }
+    
     override func receive(message: String) {
-        
-        // buffer -
-        var buffer = ""
-        // get the old string -
-        let old_text = text_field.string!
-        
-        // append the new line -
-        buffer+=old_text
-        buffer+="\n"
-        buffer+=message
-        
-        // set the new text -
-        text_field.string = buffer
-        
-        // scroll -
-        text_field.setNeedsDisplayInRect(text_field.bounds)
+    
+        // We are updating the main thread -
+        dispatch_async(dispatch_get_main_queue()) {[weak self]() -> Void in
+         
+            if let weak_self = self {
+                
+                // buffer -
+                var buffer = ""
+                
+                // get the old string -
+                let old_text = weak_self.text_field.string!
+                
+                // append the new line -
+                buffer+=old_text
+                buffer+="\n"
+                buffer+=message
+                
+                // set the new text -
+                weak_self.text_field.string = buffer
+                
+                // scroll -
+                weak_self.text_field.scrollToEndOfDocument(nil)
+                
+            }
+        }
     }
 }
